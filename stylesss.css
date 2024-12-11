@@ -1,0 +1,409 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el header esté por encima de otros elementos */
+    background-color: #D20001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el efecto de sombra */
+    height: 50px;
+    margin-bottom: 60px;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el navbar esté encima de otros elementos */
+    background-color: #FE5900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el elfecto de sombra*/
+    min-height: 50%;
+    margin-bottom: 50px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    max-width: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: auto;
+    font-family: "Fredoka", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    /* Cambia este valor para ajustar el tamaño del texto */
+    margin-left: 20px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    font-size: 2.1rem;
+    /* Opcional: agranda ligeramente el texto al pasar el mouse */
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+}
+
+.search-cart-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+    gap: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    /* Reduce el padding para hacer el campo más pequeño */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    border-radius: 20px;
+    width: 120px;
+    /* Ajusta el ancho del campo de búsqueda */
+}
+
+.search-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #167BC3;
+    margin-left: 5px;
+    flex-direction: column;
+    /* Cambiar diseño para dispositivos pequeños */
+    align-items: stretch;
+}
+
+.search-container i:hover {
+    color: #FE5900;
+}
+
+.search-cart-icons a {
+    color: #fff;
+    /* Color del icono del carrito */
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.search-cart-icons a:hover {
+    color: #167BC3;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    /* Asegura que sea visible en fondos oscuros */
+    border-radius: 50%;
+}
+
+/* Onda debajo del header */
+.wave-header {
+    position: sticky;
+    /* Esto hace que se mantenga "pegado" inicialmente */
+    top: 0;
+    /* Pegado al borde superior */
+    z-index: 900;
+    /* Debajo del header */
+    height: 100%;
+    ;
+    /* Ajusta según tus necesidades */
+    transition: transform 0.1s ease;
+    /* Transición para el efecto de separación */
+    padding-top: 5%;
+}
+
+.wave-header.hidden {
+    transform: translateY(-150%);
+}
+
+
+/* Onda SVG */
+svg {
+    position: absolute;
+    bottom: -130%;
+    /* Ajusta dinámicamente la posición según el tamaño de la pantalla */
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 10px;
+        font-size: 0.8rem;
+        /* Más pequeño para pantallas medianas */
+    }
+
+    .search-container {
+        flex-direction: column;
+        /* Cambiar diseño para dispositivos pequeños */
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+        /* Usar todo el espacio disponible */
+    }
+
+    .wave-header svg {
+        bottom: -10%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        font-size: 0.7rem;
+    }
+
+    .navbar-brand img {
+        max-width: 40%;
+        /* Reducir logo para pantallas pequeñas */
+    }
+
+    .wave-header svg {
+        bottom: -15%;
+    }
+
+    .search-cart-icons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Contenido */
+
+/* Contenido */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    margin-top: 40px
+}
+p{
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-align: left;
+}
+.banner {
+    background: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/32/f4/f9/brosso-sabor-a-diversion.jpg?w=900&h=500&s=1') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FE5900;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-size: 10vw; /* Usar unidades relativas para el tamaño de la fuente */
+    font-weight: bold;
+    margin-top: 80px;
+}
+  .about-section {
+    padding: 40px 0;
+    color: #000;
+  }
+  .about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: black;
+  }
+  .about-images img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+.swiper{
+    width: 100%;
+    padding: 150px 0 50px 0;
+}
+.swiper-slide{
+    width: 450px;  /* tamaño de la caja en lo ancho */
+    height: 400px; /* tamaño de la caja en lo largo */
+    background-color: #ffee00;
+    box-shadow: 0 0 20px rgba(0,0, 0,0.4);
+    padding: 40px;
+    text-align: center;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.icons i{
+    font-size: 20px;
+    color: #fff;
+}
+.icons img{
+    width: 120px;
+}
+.product-content{
+    display: flex;
+    justify-content: space-between;
+}
+.product-txt{
+    flex-basis: 50%;
+    text-align: left;
+}
+.poduct-txt span{
+    font-size: 30px;
+    color:aliceblue;
+    font-weight: bold;
+}
+.product-txt h3{
+    font-size: 30px;
+    color: #FE5900;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style:bold;
+}
+.prduct-text p{
+    font-size: 14px;
+    color: #fff;
+}
+.product-img{
+    flex-basis: 50%;
+    text-align: center;
+}
+.product-img img{
+    width: 120px;
+}
+.btn-1{
+    display: inline-block;
+    padding: 13px 55px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 50px;
+}
+h1{
+    color: #000;
+}
+/* General Social Buttons Styling */
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-social i {
+    margin-right: 10px;
+}
+
+/* Facebook Button */
+.btn-facebook {
+    background-color: #3b5998;
+    border: none;
+}
+
+.btn-facebook:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+
+/* Instagram Button */
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: none;
+}
+
+.btn-instagram:hover {
+    background: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+
+/* TikTok Button */
+.btn-tiktok {
+    background-color: #000000;
+    border: none;
+}
+
+.btn-tiktok:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px; /* Ajusta este valor según la separación deseada */
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+  background-color: #FE5900; /* Fondo oscuro */
+  color: #fff; /* Texto claro */
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit; /* Mantiene el color del texto */
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #167BC3; /* Color de hover */
+}
+
+footer img {
+  max-height: 100px;
+  object-fit: contain;
+}

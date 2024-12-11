@@ -1,0 +1,598 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el header esté por encima de otros elementos */
+    background-color: #D20001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el efecto de sombra */
+    height: 50px;
+    margin-bottom: 60px;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el navbar esté encima de otros elementos */
+    background-color: #FE5900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el elfecto de sombra*/
+    min-height: 25%;
+    margin-bottom: 25px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    max-width: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: auto;
+    font-family: "Fredoka", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    /* Cambia este valor para ajustar el tamaño del texto */
+    margin-left: 20px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    font-size: 2.1rem;
+    /* Opcional: agranda ligeramente el texto al pasar el mouse */
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+}
+
+.search-cart-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+    gap: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    /* Reduce el padding para hacer el campo más pequeño */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    border-radius: 20px;
+    width: 120px;
+    /* Ajusta el ancho del campo de búsqueda */
+}
+
+.search-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #167BC3;
+    margin-left: 5px;
+    flex-direction: column;
+    /* Cambiar diseño para dispositivos pequeños */
+    align-items: stretch;
+}
+
+.search-container i:hover {
+    color: #FE5900;
+}
+
+.search-cart-icons a {
+    color: #fff;
+    /* Color del icono del carrito */
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.search-cart-icons a:hover {
+    color: #167BC3;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    /* Asegura que sea visible en fondos oscuros */
+    border-radius: 50%;
+}
+
+/* Onda debajo del header */
+.wave-header {
+    position: sticky;
+    /* Esto hace que se mantenga "pegado" inicialmente */
+    top: 0;
+    /* Pegado al borde superior */
+    z-index: 900;
+    /* Debajo del header */
+    height: 100%;
+    ;
+    /* Ajusta según tus necesidades */
+    transition: transform 0.1s ease;
+    /* Transición para el efecto de separación */
+    padding-top: 5%;
+}
+
+.wave-header.hidden {
+    transform: translateY(-150%);
+}
+
+
+/* Onda SVG */
+svg {
+    position: absolute;
+    bottom: -130%;
+    /* Ajusta dinámicamente la posición según el tamaño de la pantalla */
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 10px;
+        font-size: 0.8rem;
+        /* Más pequeño para pantallas medianas */
+    }
+
+    .search-container {
+        flex-direction: column;
+        /* Cambiar diseño para dispositivos pequeños */
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+        /* Usar todo el espacio disponible */
+    }
+
+    .wave-header svg {
+        bottom: -10%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        font-size: 0.7rem;
+    }
+
+    .navbar-brand img {
+        max-width: 40%;
+        /* Reducir logo para pantallas pequeñas */
+    }
+
+    .wave-header svg {
+        bottom: -15%;
+    }
+
+    .search-cart-icons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Contenido */
+
+/* Contenido */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 180px
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+}
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .front h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, 4);
+    text-align: center;
+}
+.card .back{
+    transform: perspective(600px) rotateY(180deg);
+    background: #FE5900;
+    padding: 15px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+.card .back .link{
+    border-top: solid 1px #fff;
+    height: 50px;
+    line-height: 50px;
+}
+.card .back .link a{
+    color: #fff;
+}
+.card .back h3{
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.card .back p{
+    letter-spacing: 1px;
+}
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+.btn {
+    background-color: #D20001;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001; /* Agrega un borde al pasar el mouse */
+}
+.modal-header {
+    background-color: #D20001;
+    border-bottom: none;
+    border-color: #D20001;
+    box-shadow: 0 0 8px #FE5900;
+}
+
+.modal-content {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+body {
+    background-color:#fff;
+    font-size: 10px; /* Makes 1rem = 10px */
+  }
+  
+  label {
+    color: white;
+    font-size: 1.5rem;
+  }
+  input {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+  
+  .confetti-container {
+    user-select: none;
+    z-index: 10;
+  }
+  .confetti {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    /* width: 600px; */
+    /* height: 600px; */
+    /* overflow: hidden; */
+  }
+  
+  .confetti .square {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--bg);
+    transform: rotate(-140deg);
+  }
+  
+  .confetti .rectangle {
+    width: 1rem;
+    height: 0.5rem;
+    background-color: var(--bg);
+  }
+  
+  .confetti .hexagram {
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 1rem solid var(--bg);
+    position: relative;
+  }
+  
+  .confetti .hexagram:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 1rem solid var(--bg);
+    position: absolute;
+    top: 0.33rem;
+    left: -0.5rem;
+  }
+  
+  .confetti .pentagram {
+    width: 0rem;
+    height: 0rem;
+    display: block;
+    margin: 0.5rem 0;
+    border-right: 1rem solid transparent;
+    border-bottom: 0.7rem solid var(--bg);
+    border-left: 1rem solid transparent;
+    transform: rotate(35deg);
+    position: relative;
+  }
+  .confetti .pentagram:before {
+    content: "";
+    width: 0;
+    height: 0;
+    display: block;
+    border-bottom: 0.8rem solid var(--bg);
+    border-left: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    transform: rotate(-35deg);
+    position: absolute;
+    top: -0.45rem;
+    left: -0.65rem;
+  }
+  .confetti .pentagram:after {
+    content: "";
+    width: 0rem;
+    height: 0rem;
+    display: block;
+    border-right: 1rem solid transparent;
+    border-bottom: 0.7rem solid var(--bg);
+    border-left: 1rem solid transparent;
+    transform: rotate(-70deg);
+    position: absolute;
+    top: 0.03rem;
+    left: -1.05rem;
+  }
+  
+  .confetti .dodecagram {
+    background: var(--bg);
+    width: 0.8rem;
+    height: 0.8rem;
+    position: relative;
+  }
+  
+  .confetti .dodecagram:before {
+    content: "";
+    height: 0.8rem;
+    width: 0.8rem;
+    background: var(--bg);
+    transform: rotate(30deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .confetti .dodecagram:after {
+    content: "";
+    height: 0.8rem;
+    width: 0.8rem;
+    background: var(--bg);
+    transform: rotate(60deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .confetti .wavy-line {
+    position: relative;
+  }
+  .confetti .wavy-line::after,
+  .confetti .wavy-line::before {
+    content: "";
+    height: 1rem;
+    width: 8rem;
+    background-size: 2rem 1rem;
+    position: absolute;
+    left: -9rem;
+    transform: rotate(90deg);
+  }
+  
+  .confetti .wavy-line::before {
+    background-image: linear-gradient(
+      45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%
+    );
+    top: 1rem;
+  }
+  .confetti .wavy-line::after {
+    background-image: linear-gradient(
+      -45deg,
+      transparent,
+      transparent 50%,
+      var(--bg) 50%,
+      transparent 60%
+    );
+  }
+  
+  .confetti i {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.2rem;
+    animation-name: confetti;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: calc(70s / var(--speed));
+  }
+  
+  .confetti i:nth-child(even) {
+    transform: rotate(90deg);
+  }
+  
+  @keyframes confetti {
+    0% {
+      transform: translateY(-100vh);
+    }
+  
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+  
+  /* General Social Buttons Styling */
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-social i {
+    margin-right: 10px;
+}
+
+/* Facebook Button */
+.btn-facebook {
+    background-color: #3b5998;
+    border: none;
+}
+
+.btn-facebook:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+
+/* Instagram Button */
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border: none;
+}
+
+.btn-instagram:hover {
+    background: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+
+/* TikTok Button */
+.btn-tiktok {
+    background-color: #000000;
+    border: none;
+}
+
+.btn-tiktok:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001;
+}
+  
+/* Footer */
+footer {
+    margin-top: 40px;
+    /* Ajusta este valor según la separación deseada */
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    background-color: #FE5900;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    /* Mantiene el color del texto */
+    transition: color 0.3s ease;
+}
+
+footer img {
+    max-height: 100px;
+    object-fit: contain;
+}

@@ -1,0 +1,358 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el header esté por encima de otros elementos */
+    background-color: #FE5900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el efecto de sombra */
+    height: 180px;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el navbar esté encima de otros elementos */
+    background-color: #FE5900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el elfecto de sombra*/
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: auto;
+    font-family: "Fredoka", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    /* Cambia este valor para ajustar el tamaño del texto */
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    font-size: 2.1rem;
+    /* Opcional: agranda ligeramente el texto al pasar el mouse */
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+}
+
+.search-cart-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    /* Reduce el padding para hacer el campo más pequeño */
+    font-size: 0.9rem;
+    /* Ajusta el tamaño de la fuente del buscador */
+    border-radius: 20px;
+    width: 120px;
+    /* Ajusta el ancho del campo de búsqueda */
+}
+
+.search-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #167BC3;
+    margin-left: 5px;
+}
+
+.search-container i:hover {
+    color: #FE5900;
+}
+
+.search-cart-icons a {
+    color: #fff;
+    /* Color del icono del carrito */
+    font-size: 2rem
+}
+
+.search-cart-icons a:hover {
+    color: #167BC3;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    /* Asegura que sea visible en fondos oscuros */
+    border-radius: 50%;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    /* Reduce un poco el tamaño del texto en dispositivos pequeños */
+}
+
+/* Onda debajo del header */
+.wave-header {
+    width: 100%;
+    position: relative;
+    padding-top: 5%;
+    /* Ajusta la altura en función del ancho de la pantalla */
+}
+.wave-header.hidden {
+    transform: translateY(-150%);
+}
+
+/* Onda SVG */
+svg {
+    position: absolute;
+    bottom: -210%;
+    /* Ajusta dinámicamente la posición según el tamaño de la pantalla */
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .wave-header {
+        padding-top: 10%;
+        /* Aumenta el espacio superior en pantallas más pequeñas */
+    }
+
+    svg {
+        bottom: -10%;
+        /* Ajusta la posición de la onda */
+    }
+}
+
+/* Responsivos para pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .wave-header {
+        padding-top: 15%;
+        /* Aumenta aún más el espacio superior */
+    }
+
+    svg {
+        bottom: -15%;
+        /* Ajusta más la posición de la onda */
+    }
+}
+.bi{
+    color: white;
+}
+
+/* Contenido */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Codigo para la  Imagen  realize Zoom */
+.img-zoom {
+    transition: transform 0.2s ease;
+    width: 50%;
+    /* Reduces o aumenta  el tamaño de la imagen */
+    height: auto;
+    margin: 0 auto;
+    /* Centra la imagen */
+    display: block;
+    /* Permite que la imagen se comporte como un bloque para centrarla */
+}
+
+.img-zoom:hover {
+    transform: scale(1.1);
+    /* Reduces o aumenta  el efecto zoom  */
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    /* Alinea verticalmente */
+    gap: 30px;
+    /* Espacio entre los elementos */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Espacio entre los botones de cantidad */
+}
+
+.quantity-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #D90416;
+    color: white;
+    border-color: #FE5900;
+}
+
+.btn-order {
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: #D90416;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-order:hover {
+    background-color: #FE5900;
+    ;
+}
+.btn {
+    display: inline-block;
+    padding: 13px 55px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #D20001;
+}
+.btn:hover{
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001; /* Agrega un borde al pasar el mouse */
+}
+
+/* botón */
+.btn-custom {
+    background-color: #D20001;
+    color: white;
+    border: none;
+    /* Elimina el borde por defecto */
+}
+
+.btn-custom:hover {
+    background-color: white;
+    /* Color de fondo al pasar el mouse */
+}
+.cart-popup {
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    background: white;
+    padding: 20px;
+    border: 2px solid #FE5900;
+    display: none; /* Puedes cambiarlo para mostrar el carrito cuando sea necesario */
+}
+
+.cart-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cart-list li {
+    margin-bottom: 10px;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #f00;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  
+  .cart-image {
+    border-radius: 1px;
+  }
+  
+  .cart-name {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+/* Footer */
+footer {
+    margin-top: 40px;
+    /* Ajusta este valor según la separación deseada */
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    background-color: #FE5900;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    /* Mantiene el color del texto */
+    transition: color 0.3s ease;
+}
+
+footer img {
+    max-height: 100px;
+    object-fit: contain;
+}

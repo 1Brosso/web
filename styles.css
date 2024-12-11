@@ -1,0 +1,303 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el header esté por encima de otros elementos */
+    background-color: #D20001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el efecto de sombra */
+    height: 50px;
+    margin-bottom: 60px;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    /* Se pega al borde superior de la página */
+    z-index: 1000;
+    /* Permite que el navbar esté encima de otros elementos */
+    background-color: #FE5900;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Da el elfecto de sombra*/
+    min-height: 50%;
+    margin-bottom: 50px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    /* Ajusta este valor según el tamaño deseado */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    max-width: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: auto;
+    font-family: "Fredoka", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    /* Cambia este valor para ajustar el tamaño del texto */
+    margin-left: 20px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    font-size: 2.1rem;
+    /* Opcional: agranda ligeramente el texto al pasar el mouse */
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+}
+
+.search-cart-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+    gap: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 3px 5px;
+    /* Reduce el padding para hacer el campo más pequeño */
+    font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+    border-radius: 20px;
+    width: 120px;
+    /* Ajusta el ancho del campo de búsqueda */
+}
+
+.search-container i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #167BC3;
+    margin-left: 5px;
+    flex-direction: column;
+    /* Cambiar diseño para dispositivos pequeños */
+    align-items: stretch;
+}
+
+.search-container i:hover {
+    color: #FE5900;
+}
+
+.search-cart-icons a {
+    color: #fff;
+    /* Color del icono del carrito */
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.search-cart-icons a:hover {
+    color: #167BC3;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff;
+    /* Asegura que sea visible en fondos oscuros */
+    border-radius: 50%;
+}
+
+/* Onda debajo del header */
+.wave-header {
+    position: sticky;
+    /* Esto hace que se mantenga "pegado" inicialmente */
+    top: 0;
+    /* Pegado al borde superior */
+    z-index: 900;
+    /* Debajo del header */
+    height: 100%;
+    ;
+    /* Ajusta según tus necesidades */
+    transition: transform 0.1s ease;
+    /* Transición para el efecto de separación */
+    padding-top: 5%;
+}
+
+.wave-header.hidden {
+    transform: translateY(-150%);
+}
+
+
+/* Onda SVG */
+svg {
+    position: absolute;
+    bottom: -130%;
+    /* Ajusta dinámicamente la posición según el tamaño de la pantalla */
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin-left: 10px;
+        font-size: 0.8rem;
+        /* Más pequeño para pantallas medianas */
+    }
+
+    .search-container {
+        flex-direction: column;
+        /* Cambiar diseño para dispositivos pequeños */
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+        /* Usar todo el espacio disponible */
+    }
+
+    .wave-header svg {
+        bottom: -10%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .nav-link {
+        font-size: 0.7rem;
+    }
+
+    .navbar-brand img {
+        max-width: 40%;
+        /* Reducir logo para pantallas pequeñas */
+    }
+
+    .wave-header svg {
+        bottom: -15%;
+    }
+
+    .search-cart-icons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Contenido */
+
+/* Contenido */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    margin-top: 15px
+}
+p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* Banner */
+.banner {
+    background: url('https://img.freepik.com/foto-gratis/hamburguesa-papas-fritas-placa-espacio-copia_23-2148235009.jpg?t=st=1733867946~exp=1733871546~hmac=0a8de6bca0b4239f0891b6f4d9db12fc2f06397807bf614e242ea0af70c939b8&w=740') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* Efecto de sombra y elevación en las tarjetas */
+.producto-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;   /* Distancia superior */
+    margin-bottom: 20px; /* Distancia inferior */
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+/* Botón Comprar */
+.btn-success i {
+    margin-right: 5px; /* Espaciado entre ícono y texto */
+    background-color: #D20001;
+}
+/* Ocultar productos adicionales por defecto */
+.d-none {
+    display: none;
+}
+/* Botón Ver Más */
+.btn {
+    background-color: #D20001;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #D20001;
+    border: 1px solid #D20001; /* Agrega un borde al pasar el mouse */
+}
+/* Footer */
+footer {
+    margin-top: 40px;
+    /* Ajusta este valor según la separación deseada */
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    background-color: #FE5900;
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    /* Mantiene el color del texto */
+    transition: color 0.3s ease;
+}
+
+footer img {
+    max-height: 100px;
+    object-fit: contain;
+}
